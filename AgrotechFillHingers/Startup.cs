@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using VkNet;
+using VkNet.Abstractions;
+using VkNet.Model;
 
 namespace AgrotechFillHingers
 {
@@ -22,6 +25,13 @@ namespace AgrotechFillHingers
         {
 
             services.AddControllersWithViews();
+            services.AddControllers();
+            services.AddSingleton<IVkApi>(sp => {
+
+                var api = new VkApi();
+                api.Authorize(new ApiAuthParams { AccessToken = Configuration["VkConfig:AccessToken"] });
+                return api;
+            });
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
