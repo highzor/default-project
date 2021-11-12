@@ -67,7 +67,7 @@ class HttpClient {
         return this.http.delete<T, R>(url, config);
     }
 
-    private handleError(error) {
+    private handleError(error: { status: any; data: any; }) {
         const { status, data } = error;
         let statusText = data;
         switch (status) {
