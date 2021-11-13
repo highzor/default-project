@@ -31,6 +31,7 @@ namespace AgrotechFillHingers.Backend.Interfaces
         RepositoryBase<Group_addressesModel> GroupAddressesRepository { get; }
         RepositoryBase<GroupsModel> GroupsRepository { get; }
         RepositoryBase<PartnersModel> PartnersRepository { get; }
+        RepositoryBase<Partner_addressesModel> Partner_addressesRepository { get; }
         RepositoryBase<Task_docksModel> TaskDocksRepository { get; }
         RepositoryBase<Task_status_historyModel> TaskStatusHistoryRepository { get; }
         RepositoryBase<TasksModel> TasksRepository { get; }

@@ -11,5 +11,6 @@ namespace AgrotechFillHingers.Backend.Models.Group_addresses
         public int group_id {get;set;}
         public int type_id {get;set;}
         public string address {get;set;}
+        public string description {get;set;}
     }
 }

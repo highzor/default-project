@@ -9,6 +9,7 @@ namespace AgrotechFillHingers.Backend.Models.Curators
         [Key]
         public int id {get;set;}
         public int status_id {get;set;}
+        public int group_id {get;set;}
         public int user_id {get;set;}
     }
 }

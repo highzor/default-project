@@ -12,5 +12,6 @@ namespace AgrotechFillHingers.Backend.Models.Partners
         public string law_name {get;set;}
         public string address {get;set;}
         public string phone {get;set;}
+        public string contact_fio { get; set; }
     }
 }

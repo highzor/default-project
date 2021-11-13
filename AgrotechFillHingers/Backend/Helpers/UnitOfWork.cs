@@ -5,10 +5,7 @@ using AgrotechFillHingers.Backend.Models.User;
 using AgrotechFillHingers.Backend.Repositories;
 using Npgsql;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using AgrotechFillHingers.Backend.Models.Acts;
 using AgrotechFillHingers.Backend.Models.Curators;
 using AgrotechFillHingers.Backend.Models.Group_addresses;
@@ -42,6 +39,7 @@ namespace AgrotechFillHingers.Backend.Helpers
         private RepositoryBase<Group_addressesModel> _groupAddressesRepository;
         private RepositoryBase<GroupsModel> _groupsRepository;
         private RepositoryBase<PartnersModel> _partnersRepository;
+        private RepositoryBase<Partner_addressesModel> _partner_addressesRepository;
         private RepositoryBase<Task_docksModel> _taskDocksRepository;
         private RepositoryBase<Task_status_historyModel> _taskStatusHistoryRepository;
         private RepositoryBase<TasksModel> _tasksRepository;
@@ -57,6 +55,7 @@ namespace AgrotechFillHingers.Backend.Helpers
         public RepositoryBase<Group_addressesModel> GroupAddressesRepository { get { return _groupAddressesRepository ??= new RepositoryBase<Group_addressesModel>(_transaction);  } }
         public RepositoryBase<GroupsModel> GroupsRepository { get { return _groupsRepository ??= new RepositoryBase<GroupsModel>(_transaction);  } }
         public RepositoryBase<PartnersModel> PartnersRepository { get { return _partnersRepository ??= new RepositoryBase<PartnersModel>(_transaction);  } }
+        public RepositoryBase<Partner_addressesModel> Partner_addressesRepository { get { return _partner_addressesRepository ??= new RepositoryBase<Partner_addressesModel>(_transaction);  } }
         public RepositoryBase<Task_docksModel> TaskDocksRepository { get { return _taskDocksRepository ??= new RepositoryBase<Task_docksModel>(_transaction);  } }
         public RepositoryBase<Task_status_historyModel> TaskStatusHistoryRepository { get { return _taskStatusHistoryRepository ??= new RepositoryBase<Task_status_historyModel>(_transaction);  } }
         public RepositoryBase<TasksModel> TasksRepository { get { return _tasksRepository ??= new RepositoryBase<TasksModel>(_transaction);  } }
@@ -86,6 +85,7 @@ namespace AgrotechFillHingers.Backend.Helpers
             _curatorsRepository = null;
             _groupsRepository = null;
             _partnersRepository = null;
+            _partner_addressesRepository = null;
             _tasksRepository = null;
             _volunteersRepository = null;
             _usersRepository = null;
