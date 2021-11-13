@@ -10,16 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNet.Security.OAuth.Vkontakte" Version="5.0.18" />
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="Dapper.SimpleCRUD" Version="2.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.9" />
-    <PackageReference Include="VkNet" Version="1.67.0" />
     <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.4.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Npgsql" Version="6.0.0" />
+    <PackageReference Include="VkNet" Version="1.67.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +49,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\api_services\Authorization.service.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_services\User.service.ts" />
   </ItemGroup>
 
@@ -64,6 +66,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="ClientApp\src\api_services\Authorization.service.ts">
+      <CustomToolNamespace>Backend\Controllers\Authorization\AuthorizationController.cs</CustomToolNamespace>
+    </None>
     <None Update="ClientApp\src\api_services\User.service.ts">
       <CustomToolNamespace>Backend\Controllers\User\UserController.cs</CustomToolNamespace>
     </None>
