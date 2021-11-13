@@ -17,6 +17,11 @@ namespace AgrotechFillHingers.Backend.Controllers.User
     {
         private UserView _domainView;
 
+        public UserController()
+        {
+            _domainView = new UserView();
+        }
+
         [Route("List")]
         [HttpGet]
         [ReturnType(typeof(UserModel))]

@@ -4,14 +4,23 @@ import { Switch, Route } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import CreateTask from './pages/CreateTask';
 import Login from './pages/Login';
+import Landing from './pages/Landing';
+import PageLayout from './pages/Layout/PageLayout';
+import CabinetCard from './pages/CabinetCard';
+
+import './Styles.css';
 
 const App = (props) => {
 
     return (
-        <Switch>
-            <Route exact path="/login" component={(props) => <Login {...props} />} />
-            <Route exact path="/content" component={(props) => <CreateTask {...props} />} />
-        </Switch>
+        <PageLayout>
+            <Switch>
+                <Route exact path="/" component={(props) => <Landing {...props} />} />
+                <Route exact path="/login" component={(props) => <Login {...props} />} />
+                <Route exact path="/cabinet" component={(props) => <CabinetCard {...props} />} />
+                <Route exact path="/content" component={(props) => <CreateTask {...props} />} />
+            </Switch>
+        </PageLayout>
     );
 }
 
