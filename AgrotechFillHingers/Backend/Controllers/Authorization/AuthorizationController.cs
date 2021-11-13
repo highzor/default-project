@@ -5,37 +5,38 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace AgrotechFillHingers.Backend.Controllers.Authorization
 {
     public class AuthorizationController
     {
-        //private static string GetRequest(string host, string req)
-        //{
-        //    string str = "";
+        private static string GetRequest(string host, string req)
+        {
+            string str = "";
 
-        //    var Vk = new HttpClient();
-        //    Vk.DefaultRequestHeaders.Add("Connection", "close");
+            var Vk = new HttpClient();
+            Vk.DefaultRequestHeaders.Add("Connection", "close");
 
-        //    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(req);
-        //    request.UseDefaultCredentials = true;
-        //    request.PreAuthenticate = true;
-        //    request.Credentials = CredentialCache.DefaultCredentials;
-        //    request.Method = "GET";
-        //    request.Host = host;
-        //    request.UserAgent = "RM";
-        //    request.ContentType = "application/x-www-form-urlencoded";
-        //    request.KeepAlive = false;
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(req);
+            request.UseDefaultCredentials = true;
+            request.PreAuthenticate = true;
+            request.Credentials = CredentialCache.DefaultCredentials;
+            request.Method = "GET";
+            request.Host = host;
+            request.UserAgent = "RM";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.KeepAlive = false;
 
-        //    using (HttpWebResponse responsevk = (HttpWebResponse)request.GetResponse())
-        //    using (var stream = responsevk.GetResponseStream())
-        //    using (var streamReader = new StreamReader(stream, Encoding.UTF8))
-        //    {
-        //        str = streamReader.ReadToEnd();
-        //    }
-        //    return str;
-        //}
+            using (HttpWebResponse responsevk = (HttpWebResponse)request.GetResponse())
+            using (var stream = responsevk.GetResponseStream())
+            using (var streamReader = new StreamReader(stream, Encoding.UTF8))
+            {
+                str = streamReader.ReadToEnd();
+            }
+            return str;
+        }
 
         //public static void VK_GetServerToken(string client_id, string client_secret)
         //{
