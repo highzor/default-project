@@ -46,8 +46,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Remove="ClientApp\src\api_models\MessageModel.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\api_models\UserModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_services\User.service.ts" />
   </ItemGroup>
 
@@ -60,12 +58,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ClientApp\src\api_models\MessageModel.ts">
-      <CustomToolNamespace>VkBotBackend\Models\MessageModel.cs</CustomToolNamespace>
-    </None>
-    <None Update="ClientApp\src\api_models\UserModel.ts">
-      <CustomToolNamespace>Backend\Models\User\UserModel.cs</CustomToolNamespace>
-    </None>
     <None Update="ClientApp\src\api_services\User.service.ts">
       <CustomToolNamespace>Backend\Controllers\User\UserController.cs</CustomToolNamespace>
     </None>
