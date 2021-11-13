@@ -4,7 +4,7 @@ using Dapper;
 namespace AgrotechFillHingers.Backend.Models.Curators
 {
     [Table("Curators")]
-    public class Curators: IModel 
+    public class CuratorsModel: IModel 
     {
         [Key]
         public int id {get;set;}

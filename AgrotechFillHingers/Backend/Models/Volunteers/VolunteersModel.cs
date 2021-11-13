@@ -3,8 +3,8 @@ using Dapper;
 
 namespace AgrotechFillHingers.Backend.Models.Volunteers
 {
-    [Table("Volunteers")]
-    public class Volunteers: IModel 
+    [Table("VolunteersModel")]
+    public class VolunteersModel: IModel 
     {
         [Key]
         public int id {get;set;}

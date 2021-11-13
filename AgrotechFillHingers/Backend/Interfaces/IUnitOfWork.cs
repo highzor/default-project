@@ -27,16 +27,16 @@ namespace AgrotechFillHingers.Backend.Interfaces
         RepositoryBase<ScheduleModel> ScheduleRepository { get; }
         RepositoryBase<ScheduleStatusModel> ScheduleStatusRepository { get; }
 
-        RepositoryBase<Acts> ActsRepository { get; }
-        RepositoryBase<Curators> CuratorsRepository { get; }
-        RepositoryBase<Group_addresses> GroupAddressesRepository { get; }
-        RepositoryBase<Groups> GroupsRepository { get; }
-        RepositoryBase<Partners> PartnersRepository { get; }
-        RepositoryBase<Task_docks> TaskDocksRepository { get; }
-        RepositoryBase<Task_status_history> TaskStatusHistoryRepository { get; }
-        RepositoryBase<Tasks> TasksRepository { get; }
-        RepositoryBase<Users> UsersRepository { get; }
-        RepositoryBase<Volunteers> VolunteersRepository { get; }
+        RepositoryBase<ActsModel> ActsRepository { get; }
+        RepositoryBase<CuratorsModel> CuratorsRepository { get; }
+        RepositoryBase<Group_addressesModel> GroupAddressesRepository { get; }
+        RepositoryBase<GroupsModel> GroupsRepository { get; }
+        RepositoryBase<PartnersModel> PartnersRepository { get; }
+        RepositoryBase<Task_docksModel> TaskDocksRepository { get; }
+        RepositoryBase<Task_status_historyModel> TaskStatusHistoryRepository { get; }
+        RepositoryBase<TasksModel> TasksRepository { get; }
+        RepositoryBase<UsersModel> UsersRepository { get; }
+        RepositoryBase<VolunteersModel> VolunteersRepository { get; }
 
         #endregion
 

@@ -4,7 +4,7 @@ using Dapper;
 namespace AgrotechFillHingers.Backend.Models.Task_status_history
 {
     [Table("Task_status_history")]
-    public class Task_status_history: IModel 
+    public class Task_status_historyModel: IModel 
     {
         [Key]
         public int id {get;set;}

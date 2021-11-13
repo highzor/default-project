@@ -1,8 +1,10 @@
-﻿namespace AgrotechFillHingers.Backend.Views.Partners
+﻿using Microsoft.Extensions.Configuration;
+
+namespace AgrotechFillHingers.Backend.Views.Partners
 {
     public class PartnersView : ViewBase
     {
-        public PartnersView()
+        public PartnersView(IConfiguration configuration) : base(configuration)
         {
 
         }

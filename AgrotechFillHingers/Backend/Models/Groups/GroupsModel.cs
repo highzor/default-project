@@ -4,7 +4,7 @@ using Dapper;
 namespace AgrotechFillHingers.Backend.Models.Groups
 {
     [Table("Groups")]
-    public class Groups: IModel 
+    public class GroupsModel: IModel 
     {
         [Key]
         public int id {get;set;}
