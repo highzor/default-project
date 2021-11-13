@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -48,7 +48,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Remove="ClientApp\src\api_models\UserModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_services\User.service.ts" />
   </ItemGroup>
 
@@ -65,9 +64,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ClientApp\src\api_models\UserModel.ts">
-      <CustomToolNamespace>Backend\Models\User\UserModel.cs</CustomToolNamespace>
-    </None>
     <None Update="ClientApp\src\api_services\User.service.ts">
       <CustomToolNamespace>Backend\Controllers\User\UserController.cs</CustomToolNamespace>
     </None>

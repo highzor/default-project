@@ -26,19 +26,19 @@ namespace AgrotechFillHingers.VkBotBackend.Controllers
         [HttpPost]
         public IActionResult Callback([FromBody] MessageModel message)
         {
-            switch (message.Type)
+            switch (message.type)
             {
                 case "confirmation":
                     return Ok(_configuration["VkConfig:Confirmation"]);
 
                 case "message_new":
                     //var msg = Message.FromJson(new VkResponse(updates.Object));
-                    var msg = message.Object.Message;
+                    var msg = message.Object.message;
                     _vkApi.Messages.Send(new MessagesSendParams()
                     {
                         RandomId = Environment.TickCount,
-                        PeerId = msg.PeerId,
-                        Message = msg.Text
+                        PeerId = msg.peer_id,
+                        Message = msg.text
                     });
                     break;
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,68 +9,42 @@ namespace AgrotechFillHingers.VkBotBackend.Models
     [Serializable]
     public class MessageModel
     {
-        public string Type { get; set; }
-        public ObjectType Object { get; set; }
-        public int GroupId { get; set; }
-        public string EventId { get; set; }
+        public string type { get; set; }
+        [JsonProperty("object")]
+        public ObjectClass Object { get; set; }
+        public int group_id { get; set; }
+        public string event_id { get; set; }
+    }
 
-        public class ObjectType
-        {
-            public Message Message { get; set; }
-            public ClientInfo ClientInfo { get; set; }
-        }
+    public class ObjectClass
+    {
+        public Message message { get; set; }
+        public Client_Info client_info { get; set; }
+    }
 
-        public class Message
-        {
-            public int Date { get; set; }
-            public int FromId { get; set; }
-            public int Id { get; set; }
-            public int Out { get; set; }
-            public int PeerId { get; set; }
-            public string Text { get; set; }
-            public Attachment[] attachments { get; set; }
-            public int ConversationMessageId { get; set; }
-            public object[] FwdMessages { get; set; }
-            public bool Important { get; set; }
-            public bool IsHidden { get; set; }
-            public int RandomId { get; set; }
-        }
+    public class Message
+    {
+        public int date { get; set; }
+        public int from_id { get; set; }
+        public int id { get; set; }
+        [JsonProperty("out")]
+        public int Out { get; set; }
+        public int peer_id { get; set; }
+        public string text { get; set; }
+        public object[] attachments { get; set; }
+        public int conversation_message_id { get; set; }
+        public object[] fwd_messages { get; set; }
+        public bool important { get; set; }
+        public bool is_hidden { get; set; }
+        public int random_id { get; set; }
+    }
 
-        public class Attachment
-        {
-            public string Type { get; set; }
-            public Photo Photo { get; set; }
-        }
-
-        public class Photo
-        {
-            public int AlbumId { get; set; }
-            public int Date { get; set; }
-            public int Id { get; set; }
-            public int OwnerId { get; set; }
-            public bool HasTags { get; set; }
-            public string AccessKey { get; set; }
-            public int PostId { get; set; }
-            public Size[] Sizes { get; set; }
-            public string Text { get; set; }
-        }
-
-        public class Size
-        {
-            public int Height { get; set; }
-            public string Url { get; set; }
-            public string Type { get; set; }
-            public int Width { get; set; }
-        }
-
-        public class ClientInfo
-        {
-            public string[] ButtonActions { get; set; }
-            public bool Keyboard { get; set; }
-            public bool InlineKeyboard { get; set; }
-            public bool Carousel { get; set; }
-            public int LangId { get; set; }
-        }
-
+    public class Client_Info
+    {
+        public string[] button_actions { get; set; }
+        public bool keyboard { get; set; }
+        public bool inline_keyboard { get; set; }
+        public bool carousel { get; set; }
+        public int lang_id { get; set; }
     }
 }
