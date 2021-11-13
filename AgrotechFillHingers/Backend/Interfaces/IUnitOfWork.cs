@@ -11,6 +11,18 @@ namespace AgrotechFillHingers.Backend.Interfaces
     {
         #region Tables
             RepositoryBase<UserModel> UserRepository { get; }
+            RepositoryBase<Acts> ActsRepository { get; }
+            RepositoryBase<Curators> CuratorsRepository { get; }
+            RepositoryBase<Group_addresses> GroupAddressesRepository { get; }
+            RepositoryBase<Groups> GroupsRepository { get; }
+            RepositoryBase<Partners> PartnersRepository { get; }
+            RepositoryBase<Shedules> ShedulesRepository { get; }
+            RepositoryBase<Task_docks> TaskDocksRepository { get; }
+            RepositoryBase<Task_status_history> TaskStatusHistoryRepository{get;}
+            RepositoryBase<Tasks> TasksRepository { get; }
+            RepositoryBase<Users> UsersRepository { get; }
+            RepositoryBase<Volunteers> VolunteersRepository { get; }
+
         #endregion
 
         #region Views

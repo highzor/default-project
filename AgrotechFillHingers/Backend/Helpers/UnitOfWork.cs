@@ -18,9 +18,32 @@ namespace AgrotechFillHingers.Backend.Helpers
 
         #region Tables 
         private RepositoryBase<UserModel> _userRepository;
-
-
+        public RepositoryBase<Acts> _actsRepository;
+        public RepositoryBase<Curators> _curatorsRepository;
+        public RepositoryBase<Group_addresses> _groupAddressesRepository;
+        public RepositoryBase<Groups> _groupsRepository;
+        public RepositoryBase<Partners> _partnersRepository;
+        public RepositoryBase<Shedules> _shedulesRepository;
+        public RepositoryBase<Task_docks> _taskDocksRepository;
+        public RepositoryBase<Task_status_history> _taskStatusHistoryRepository;
+        public RepositoryBase<Tasks> _tasksRepository;
+        public RepositoryBase<Users> _usersRepository;
+        public RepositoryBase<Volunteers> _volunteersRepository;
+        
         public RepositoryBase<UserModel> UserRepository { get { return _userRepository ??= new RepositoryBase<UserModel>(_transaction);  } }
+        public RepositoryBase<Acts> ActsRepository { get { return _actsRepository ??= new RepositoryBase<Acts>(_transaction);  } }
+        public RepositoryBase<Curators> CuratorsRepository { get { return _curatorsRepository ??= new RepositoryBase<Curators>(_transaction);  } }
+        public RepositoryBase<Group_addresses> GroupAddressesRepository { get { return _groupAddressesRepository ??= new RepositoryBase<Group_addresses>(_transaction);  } }
+        public RepositoryBase<Groups> GroupsRepository { get { return _groupsRepository ??= new RepositoryBase<Groups>(_transaction);  } }
+        public RepositoryBase<Partners> PartnersRepository { get { return _partnersRepository ??= new RepositoryBase<Partners>(_transaction);  } }
+        public RepositoryBase<Shedules> ShedulesRepository { get { return _shedulesRepository ??= new RepositoryBase<Shedules>(_transaction);  } }
+        public RepositoryBase<Task_docks> TaskDocksRepository { get { return _taskDocksRepository ??= new RepositoryBase<Task_docks>(_transaction);  } }
+        public RepositoryBase<Task_status_history> TaskStatusHistoryRepository { get { return _taskStatusHistoryRepository ??= new RepositoryBase<Task_status_history>(_transaction);  } }
+        public RepositoryBase<Tasks> TasksRepository { get { return _tasksRepository ??= new RepositoryBase<Tasks>(_transaction);  } }
+        public RepositoryBase<Users> UsersRepository { get { return _usersRepository ??= new RepositoryBase<Users>(_transaction);  } }
+        public RepositoryBase<Volunteers> VolunteersRepository { get { return _volunteersRepository ??= new RepositoryBase<Volunteers>(_transaction);  } }
+        
+
         #endregion
 
         #region Views
