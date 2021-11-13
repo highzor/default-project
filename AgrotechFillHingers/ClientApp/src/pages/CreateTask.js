@@ -1,32 +1,21 @@
 import {
-    Space,
-    Typography,
     Layout,
     Form,
     Input,
     Button,
     Radio,
     Select,
-    Cascader,
     DatePicker,
-    InputNumber,
-    TimePicker,
-    Switch,
-    Tag
+    TimePicker
 } from 'antd';
 import React, { useState } from 'react';
 
 import moment from 'moment';
 
-const { Text } = Typography;
-const { Header, Content, Sider } = Layout;
+const { Content } = Layout;
 const { TextArea } = Input;
 
 const format = 'HH:mm';
-
-const tailLayout = {
-    wrapperCol: { offset: 8, span: 16 },
-};
 
 const CreateTask = (props) => {
 
@@ -87,11 +76,6 @@ const CreateTask = (props) => {
                 <Form
                     {...layout}
                     layout="horizontal"
-                // initialValues={{
-                //     size: componentSize,
-                // }}
-                //onValuesChange={onFormLayoutChange}
-                //size={componentSize}
                 >
                     <Form.Item label="Задание:">
                         <Input />

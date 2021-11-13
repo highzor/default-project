@@ -4,6 +4,7 @@ import { Tabs } from 'antd';
 import { useGlobalState } from '../helpers/GlobalState';
 import { UserOutlined, AppstoreOutlined, TableOutlined, ShoppingCartOutlined, ProjectOutlined, FormOutlined, UserSwitchOutlined} from '@ant-design/icons';
 import Report from './Report';
+import Schedule from './Schedule';
 
 const { TabPane } = Tabs;
 
@@ -25,7 +26,7 @@ const CabinetCard = (props) => {
                 key="cabinet_schedule"
                 tab={<span> <TableOutlined /> Расписание </span>}
             >
-
+                <Schedule {...props}/>
             </TabPane>
             <TabPane
                 key="cabinet_tasks"
