@@ -71,7 +71,7 @@ const Schedule = (props) => {
             time: '12:02',
             address: 'Хлеб Насущный, Ивантеевская ул., д.4 к.1',
             status: 2,
-            volunteers: ['nice', 'developer'],
+            volunteers: ['nice', 'deeloper'],
         },
     ];
 
