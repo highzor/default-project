@@ -49,7 +49,7 @@
 // * Автосгенерированный файл *
 // *** НЕ ИЗМЕНЯТЬ!!! ***
 
-$Classes(*Model)[
+$Classes(c=> c.Namespace.StartsWith("AgrotechFillHingers.Backend.Models."))[
 $ImportsList
 export interface $Name {$Properties[
     $Name$TypeFormatted: $Type;]

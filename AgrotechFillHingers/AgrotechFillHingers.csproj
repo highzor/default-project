@@ -30,11 +30,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="compilerconfig.json" />
     <Content Remove="package-lock.json" />
     <Content Remove="package.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="compilerconfig.json" />
     <None Include="package-lock.json" />
     <None Include="package.json" />
   </ItemGroup>
@@ -48,6 +50,10 @@
   <ItemGroup>
     <TypeScriptCompile Remove="ClientApp\src\api_models\UserModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_services\User.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="compilerconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
