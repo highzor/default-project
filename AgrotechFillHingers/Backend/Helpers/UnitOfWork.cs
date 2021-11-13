@@ -14,7 +14,6 @@ using AgrotechFillHingers.Backend.Models.Curators;
 using AgrotechFillHingers.Backend.Models.Group_addresses;
 using AgrotechFillHingers.Backend.Models.Groups;
 using AgrotechFillHingers.Backend.Models.Partners;
-using AgrotechFillHingers.Backend.Models.Shedules;
 using AgrotechFillHingers.Backend.Models.Task_docks;
 using AgrotechFillHingers.Backend.Models.Task_status_history;
 using AgrotechFillHingers.Backend.Models.Tasks;
