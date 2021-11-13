@@ -1,7 +1,7 @@
 ﻿using AgrotechFillHingers.Backend.Interfaces;
 using Dapper;
 
-namespace AgrotechFillHingers.Backend.Models.User
+namespace AgrotechFillHingers.Backend.Models.Groups
 {
     [Table("Groups")]
     public class Groups: IModel 

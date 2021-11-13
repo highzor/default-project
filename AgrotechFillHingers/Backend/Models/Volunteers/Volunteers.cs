@@ -1,7 +1,7 @@
 ﻿using AgrotechFillHingers.Backend.Interfaces;
 using Dapper;
 
-namespace AgrotechFillHingers.Backend.Models.User
+namespace AgrotechFillHingers.Backend.Models.Volunteers
 {
     [Table("Volunteers")]
     public class Volunteers: IModel 

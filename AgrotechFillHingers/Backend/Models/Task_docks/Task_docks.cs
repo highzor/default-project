@@ -1,7 +1,7 @@
 ﻿using AgrotechFillHingers.Backend.Interfaces;
 using Dapper;
 
-namespace AgrotechFillHingers.Backend.Models.User
+namespace AgrotechFillHingers.Backend.Models.Task_docks
 {
     [Table("Task_docks")]
     public class Task_docks: IModel 

@@ -1,9 +1,10 @@
-﻿using AgrotechFillHingers.Backend.Views;
-
-public class Group_addressesView : ViewBase
+﻿namespace AgrotechFillHingers.Backend.Views.Group_addresses
 {
-    public Group_addressesView()
+    public class Group_addressesView : ViewBase
     {
+        public Group_addressesView()
+        {
 
+        }
     }
 }
