@@ -6,13 +6,18 @@ import {
     Radio,
     Select,
     DatePicker,
-    TimePicker
+    TimePicker,
+    PageHeader,
+    Space,
+    Typography
 } from 'antd';
 import React, { useState } from 'react';
+import { PlusOutlined, UserOutlined, CalendarOutlined, UnorderedListOutlined } from '@ant-design/icons';
 
 import moment from 'moment';
 
-const { Content } = Layout;
+const { Content, Header } = Layout;
+const { Text, Title } = Typography;
 const { TextArea } = Input;
 
 const format = 'HH:mm';
@@ -25,7 +30,7 @@ const CreateTask = (props) => {
     const options = [];
 
     for (let i = 0; i < 4; i++) {
-        
+
         const value = i.toString(36) + i;
         options.push({
             label: `ИмяВолонтера ФамилияВолонтера ОтвечтствоВолонтера ${i}`,
@@ -63,16 +68,8 @@ const CreateTask = (props) => {
     };
 
     return (
-
-        <Layout style={{ padding: '0 24px 24px' }}>
-            <Content
-                className="site-layout-background"
-                style={{
-                    padding: 24,
-                    margin: 0,
-                    minHeight: 280,
-                }}
-            >
+         <Layout className="inner-content">
+            <Content style={{ margin: '24px' }}>
                 <Form
                     {...layout}
                     layout="horizontal"
@@ -111,7 +108,7 @@ const CreateTask = (props) => {
                         <Button htmlType="button" onClick={(value) => console.log(value)}>Отменить</Button>
                     </Form.Item>
                 </Form>
-            </Content>
+            </Content >
         </Layout>
     )
 }

@@ -26,7 +26,7 @@ namespace AgrotechFillHingers.Backend.Controllers.Schedule
 
         [Route("List")]
         [HttpGet]
-        [ReturnType(typeof(ScheduleModel))]
+        [ReturnType(typeof(List<ScheduleModel>))]
         public IActionResult List()
         {
             try

@@ -4,7 +4,7 @@ import { Tabs } from 'antd';
 import { useGlobalState } from '../helpers/GlobalState';
 import { UserOutlined, AppstoreOutlined, TableOutlined, ShoppingCartOutlined, ProjectOutlined, FormOutlined, UserSwitchOutlined} from '@ant-design/icons';
 import Report from './Report';
-import Schedule from './Schedule';
+import Schedule from './Schedule/Schedule';
 
 const { TabPane } = Tabs;
 

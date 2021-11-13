@@ -11,7 +11,7 @@ class _ScheduleService {
  list = async () => {
         // get: api/Schedule/List
         var _Url = 'api/Schedule/List';
-        const {data} = await httpClient.get<ScheduleModel>(_Url);
+        const {data} = await httpClient.get<ScheduleModel[]>(_Url);
         return data;
     };
  info = async (id: number) => {

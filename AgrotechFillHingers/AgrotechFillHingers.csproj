@@ -50,18 +50,28 @@
 
   <ItemGroup>
     <TypeScriptCompile Remove="ClientApp\src\api_models\Acts.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_models\ActsModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_models\Curators.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_models\CuratorsModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_models\Groups.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_models\GroupsModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_models\Group_addresses.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_models\Group_addressesModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_models\Partners.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_models\PartnersModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_models\ScheduleModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_models\ScheduleStatusModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_models\Shedules.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_models\Tasks.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_models\TasksModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_models\Task_docks.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_models\Task_docksModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_models\Task_status_history.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_models\Task_status_historyModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_models\Users.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_models\UsersModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_models\Volunteers.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_models\VolunteersModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_services\Authorization.service.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_services\Schedule.service.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_services\ScheduleStatus.service.ts" />
@@ -84,17 +94,32 @@
     <None Update="ClientApp\src\api_models\Acts.ts">
       <CustomToolNamespace>Backend\Models\User\Acts.cs</CustomToolNamespace>
     </None>
+    <None Update="ClientApp\src\api_models\ActsModel.ts">
+      <CustomToolNamespace>Backend\Models\Acts\ActsModel.cs</CustomToolNamespace>
+    </None>
     <None Update="ClientApp\src\api_models\Curators.ts">
       <CustomToolNamespace>Backend\Models\User\Curators.cs</CustomToolNamespace>
+    </None>
+    <None Update="ClientApp\src\api_models\CuratorsModel.ts">
+      <CustomToolNamespace>Backend\Models\Curators\CuratorsModel.cs</CustomToolNamespace>
     </None>
     <None Update="ClientApp\src\api_models\Groups.ts">
       <CustomToolNamespace>Backend\Models\User\Groups.cs</CustomToolNamespace>
     </None>
+    <None Update="ClientApp\src\api_models\GroupsModel.ts">
+      <CustomToolNamespace>Backend\Models\Groups\GroupsModel.cs</CustomToolNamespace>
+    </None>
     <None Update="ClientApp\src\api_models\Group_addresses.ts">
       <CustomToolNamespace>Backend\Models\User\Group_addresses.cs</CustomToolNamespace>
     </None>
+    <None Update="ClientApp\src\api_models\Group_addressesModel.ts">
+      <CustomToolNamespace>Backend\Models\Group_addresses\Group_addressesModel.cs</CustomToolNamespace>
+    </None>
     <None Update="ClientApp\src\api_models\Partners.ts">
       <CustomToolNamespace>Backend\Models\User\Partners.cs</CustomToolNamespace>
+    </None>
+    <None Update="ClientApp\src\api_models\PartnersModel.ts">
+      <CustomToolNamespace>Backend\Models\Partners\PartnersModel.cs</CustomToolNamespace>
     </None>
     <None Update="ClientApp\src\api_models\ScheduleModel.ts">
       <CustomToolNamespace>Backend\Models\Schedule\ScheduleModel.cs</CustomToolNamespace>
@@ -108,17 +133,32 @@
     <None Update="ClientApp\src\api_models\Tasks.ts">
       <CustomToolNamespace>Backend\Models\User\Tasks.cs</CustomToolNamespace>
     </None>
+    <None Update="ClientApp\src\api_models\TasksModel.ts">
+      <CustomToolNamespace>Backend\Models\Tasks\TasksModel.cs</CustomToolNamespace>
+    </None>
     <None Update="ClientApp\src\api_models\Task_docks.ts">
       <CustomToolNamespace>Backend\Models\User\Task_docks.cs</CustomToolNamespace>
+    </None>
+    <None Update="ClientApp\src\api_models\Task_docksModel.ts">
+      <CustomToolNamespace>Backend\Models\Task_docks\Task_docksModel.cs</CustomToolNamespace>
     </None>
     <None Update="ClientApp\src\api_models\Task_status_history.ts">
       <CustomToolNamespace>Backend\Models\User\Task_status_history.cs</CustomToolNamespace>
     </None>
+    <None Update="ClientApp\src\api_models\Task_status_historyModel.ts">
+      <CustomToolNamespace>Backend\Models\Task_status_history\Task_status_historyModel.cs</CustomToolNamespace>
+    </None>
     <None Update="ClientApp\src\api_models\Users.ts">
       <CustomToolNamespace>Backend\Models\User\Users.cs</CustomToolNamespace>
     </None>
+    <None Update="ClientApp\src\api_models\UsersModel.ts">
+      <CustomToolNamespace>Backend\Models\Users\UsersModel.cs</CustomToolNamespace>
+    </None>
     <None Update="ClientApp\src\api_models\Volunteers.ts">
       <CustomToolNamespace>Backend\Models\User\Volunteers.cs</CustomToolNamespace>
+    </None>
+    <None Update="ClientApp\src\api_models\VolunteersModel.ts">
+      <CustomToolNamespace>Backend\Models\Volunteers\VolunteersModel.cs</CustomToolNamespace>
     </None>
     <None Update="ClientApp\src\api_services\Authorization.service.ts">
       <CustomToolNamespace>Backend\Controllers\Authorization\AuthorizationController.cs</CustomToolNamespace>

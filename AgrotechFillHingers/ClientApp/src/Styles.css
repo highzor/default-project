@@ -25022,10 +25022,10 @@ div.ant-typography-edit-content.ant-typography-rtl {
   padding: 0;
 }
 .ant-layout {
-  height: 90vh;
+  height: 100vh;
 }
 .ant-layout-header {
-  height: 64px;
+  height: auto;
   line-height: 50px !important;
   padding: 0px !important;
 }
@@ -25038,7 +25038,7 @@ div.ant-typography-edit-content.ant-typography-rtl {
 }
 .inner-content {
   margin: 24px;
-  height: 100% !important;
+  height: 70vh !important;
 }
 .ant-tabs-content-holder {
   background-color: #F0F2F5;
