@@ -18,17 +18,17 @@ namespace AgrotechFillHingers.Backend.Helpers
 
         #region Tables 
         private RepositoryBase<UserModel> _userRepository;
-        public RepositoryBase<Acts> _actsRepository;
-        public RepositoryBase<Curators> _curatorsRepository;
-        public RepositoryBase<Group_addresses> _groupAddressesRepository;
-        public RepositoryBase<Groups> _groupsRepository;
-        public RepositoryBase<Partners> _partnersRepository;
-        public RepositoryBase<Shedules> _shedulesRepository;
-        public RepositoryBase<Task_docks> _taskDocksRepository;
-        public RepositoryBase<Task_status_history> _taskStatusHistoryRepository;
-        public RepositoryBase<Tasks> _tasksRepository;
-        public RepositoryBase<Users> _usersRepository;
-        public RepositoryBase<Volunteers> _volunteersRepository;
+        private RepositoryBase<Acts> _actsRepository;
+        private RepositoryBase<Curators> _curatorsRepository;
+        private RepositoryBase<Group_addresses> _groupAddressesRepository;
+        private RepositoryBase<Groups> _groupsRepository;
+        private RepositoryBase<Partners> _partnersRepository;
+        private RepositoryBase<Shedules> _shedulesRepository;
+        private RepositoryBase<Task_docks> _taskDocksRepository;
+        private RepositoryBase<Task_status_history> _taskStatusHistoryRepository;
+        private RepositoryBase<Tasks> _tasksRepository;
+        private RepositoryBase<Users> _usersRepository;
+        private RepositoryBase<Volunteers> _volunteersRepository;
         
         public RepositoryBase<UserModel> UserRepository { get { return _userRepository ??= new RepositoryBase<UserModel>(_transaction);  } }
         public RepositoryBase<Acts> ActsRepository { get { return _actsRepository ??= new RepositoryBase<Acts>(_transaction);  } }
@@ -59,6 +59,17 @@ namespace AgrotechFillHingers.Backend.Helpers
         private void resetRepositories ()
         {
             _userRepository = null;
+            _actsRepository = null;
+            _curatorsRepository = null;
+            _groupsRepository = null;
+            _partnersRepository = null;
+            _shedulesRepository = null;
+            _tasksRepository = null;
+            _volunteersRepository = null;
+            _usersRepository = null;
+            _groupAddressesRepository = null;
+            _taskDocksRepository = null;
+            _taskStatusHistoryRepository = null;
         }
 
         public void Commit()
