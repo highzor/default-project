@@ -7,5 +7,6 @@
 
 
 export interface UserModel {
-    ID?: number;
+    id?: number;
+    name: string;
 }

@@ -34,5 +34,23 @@ namespace AgrotechFillHingers.Backend.Views.User
                 return userModel;
             }
         }
+
+        public int Insert(UserModel model)
+        {
+            using (var uow = new UnitOfWork(GetConnectionString()))
+            {
+                string sql = @"insert into users (name) output.id values (@name)";
+                int id = uow.CustomRepository.Query<int>(sql, new { name = model.name }).FirstOrDefault();
+
+                if (id > 0)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
     }
 }

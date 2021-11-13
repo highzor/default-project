@@ -17,6 +17,7 @@ const App = (props) => {
                 <Route exact path="/" component={(props) => <Landing {...props} />} />
                 <Route exact path="/login" component={(props) => <Login {...props} />} />
                 <Route exact path="/cabinet" component={(props) => <CabinetCard {...props} />} />
+                <Route exact path="/ocr" component={(props) => <CabinetCard {...props} />} />
             </Switch>
         </PageLayout>
     );

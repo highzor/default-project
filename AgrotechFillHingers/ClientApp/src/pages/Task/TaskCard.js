@@ -6,28 +6,31 @@
     Radio,
     Select,
     DatePicker,
-    TimePicker,
+    Tabs,
     PageHeader,
     Space,
     Typography
 } from 'antd';
 import React, { useState } from 'react';
 import { PlusOutlined, UserOutlined, CalendarOutlined, UnorderedListOutlined, EditOutlined } from '@ant-design/icons';
+import { TasksService } from '../../api_services/Tasks.service'
 
 import AsyncLoader from '../../helpers/AsyncLoader';
 
 const { Content, Header } = Layout;
 const { Text, Title } = Typography;
-const { TextArea } = Input;
-
+const { TabPane } = Tabs;
 
 const getData = async ({ params }) => {
     let data = [];
 
+    let taskInfo = await TasksService.info(params.id);
 
+    data["Info"] = taskInfo;
 
     return data;
 }
+
 
 const TaskCardView = (props) => {
 
@@ -38,8 +41,8 @@ const TaskCardView = (props) => {
                     ghost={false}
                     title={
                         <Space direction="vertical" size={1}>
-                            <Title style={{ marginBottom: '0px' }} level={3}>{'Карточка'}</Title >
-                            <Text style={{ fontSize: '14px' }} type="secondary">{'Cледите за заданиями и создавайте новые'}</Text>
+                            <Title style={{ marginBottom: '0px' }} level={3}>{props.data.Info.name}</Title >
+                            <Text style={{ fontSize: '14px' }} type="secondary">{props.data.Info.partner_law_name + "," + props.data.Info.partner_law_name + "•" + props.data.Info.partner_address}</Text>
                         </Space>
 
                     }
@@ -47,13 +50,16 @@ const TaskCardView = (props) => {
                         <Button key="1" type="primary" icon={<EditOutlined />} > Редактировать </Button>
                     }
                 >
+                    <Tabs defaultActiveKey="1" >
+                        <TabPane tab="Общие сведения" key="1">
+                            Content of Tab Pane 1
+                        </TabPane>
+                        <TabPane tab="Акт приема-передачи" key="2">
+                            Content of Tab Pane 2
+                        </TabPane>
+                    </Tabs>
                 </PageHeader>
             </Header>
-            <Layout className="inner-content">
-                <Content style={{ margin: '24px' }}>
-
-                </Content >
-            </Layout>
         </>
     )
 }

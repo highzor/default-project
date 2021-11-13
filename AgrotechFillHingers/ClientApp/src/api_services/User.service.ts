@@ -20,5 +20,11 @@ class _UserService {
         const {data} = await httpClient.get<UserModel>(_Url);
         return data;
     };
+ insert = async (userModel: UserModel) => {
+        // post: api/User/Insert
+        var _Url = 'api/User/Insert';
+        const {data} = await httpClient.post(_Url, userModel);
+        return data;
+    };
 }
 export const UserService = new _UserService(); 

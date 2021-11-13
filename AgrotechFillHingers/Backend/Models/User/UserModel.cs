@@ -7,6 +7,7 @@ namespace AgrotechFillHingers.Backend.Models.User
     public class UserModel : IModel
     {
         [Key]
-        public int? ID { get; set; }
+        public int? id { get; set; }
+        public string name { get; set; }
     }
 }

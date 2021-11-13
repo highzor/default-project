@@ -65,6 +65,27 @@ namespace AgrotechFillHingers.Backend.Controllers.User
                 return BadRequest(errorText);
             }
         }
+
+        [Route("Insert")]
+        [HttpPost]
+        [ReturnType(typeof(int))]
+        public IActionResult Insert(UserModel userModel)
+        {
+            try
+            {
+                return Content(JsonConvert.SerializeObject(_domainView.Insert(userModel)));
+            }
+            catch (Exception ex)
+            {
+                string errorText = "Не удалось добавить пользователя.";
+                if (ex is InnerViewException)
+                {
+                    errorText += Environment.NewLine + ex.Message;
+                }
+
+                return BadRequest(errorText);
+            }
+        }
     }
 
 }

@@ -11,4 +11,11 @@ export interface TasksModel {
     name: string;
     curator_id: number;
     create_date: string;
+    status_id: number;
+    partner_id: number;
+    type_id: number;
+    address_id: number;
+    delivery_time: string;
+    task_group_id: number;
+    description: string;
 }

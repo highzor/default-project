@@ -28,6 +28,13 @@ namespace AgrotechFillHingers.Backend.Helpers
         private IDbTransaction _transaction;
         private bool _disposed;
 
+        #region Custom
+        private CustomRepository _customRepository;
+
+        public CustomRepository CustomRepository { get { return _customRepository ??= new CustomRepository(_transaction); } }
+
+        #endregion
+
         #region Tables 
         private RepositoryBase<UserModel> _userRepository;
         private RepositoryBase<ActsModel> _actsRepository;

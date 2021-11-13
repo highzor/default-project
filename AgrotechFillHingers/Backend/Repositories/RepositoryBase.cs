@@ -38,5 +38,11 @@ namespace AgrotechFillHingers.Backend.Repositories
             ModelHelper<T> helper = new ModelHelper<T>(Connection.Query<T>($"SELECT * FROM {attribute.Name} {conditions}", parameters, Transaction).AsList());
             return helper.ListParseAttribyteFromDb().FirstOrDefault();
         }
+
+        public List<T> Query(string queryText, object parameters = null)
+        {
+            ModelHelper<T> helper = new ModelHelper<T>(Connection.Query<T>(queryText, parameters, Transaction).AsList());
+            return helper.ListParseAttribyteFromDb();
+        }
     }
 }

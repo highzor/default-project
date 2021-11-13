@@ -22,7 +22,7 @@
                     string type = string.Empty;
                     
                     bool isArray = a.Value.Contains("<");
-                    string formattedType = a.Value.Replace("<", "").Replace(">", "").Replace("typeof(", "").Replace(")", "");
+                    string formattedType = a.Value.Replace("<", "").Replace(">", "").Replace("typeof(", "").Replace(")", ""); 
                     string[] ar;
 
                     ar = formattedType.Split('.');
@@ -74,8 +74,11 @@
             {
                 if (!objParameter.Type.IsPrimitive && objParameter.Type.OriginalName != "dynamic")
                 {
-                    ImportsTypes.Add(objParameter.Type.Name);
-                    ImportsOutput.Add($"import {{ { objParameter.Type.Name } }} from '../api_models/{objParameter.Type.Name}';");
+                    if (!ImportsTypes.Contains(objParameter.Type.Name)) 
+                    {
+                        ImportsTypes.Add(objParameter.Type.Name);
+                        ImportsOutput.Add($"import {{ { objParameter.Type.Name } }} from '../api_models/{objParameter.Type.Name}';");
+                    }
                 }
             }
             foreach(var a in objMethod.Attributes)

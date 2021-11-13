@@ -75,6 +75,7 @@
     <TypeScriptCompile Remove="ClientApp\src\api_services\Authorization.service.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_services\Schedule.service.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_services\ScheduleStatus.service.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_services\Tasks.service.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_services\User.service.ts" />
   </ItemGroup>
 
@@ -148,6 +149,9 @@
     <None Update="ClientApp\src\api_models\Task_status_historyModel.ts">
       <CustomToolNamespace>Backend\Models\Task_status_history\Task_status_historyModel.cs</CustomToolNamespace>
     </None>
+    <None Update="ClientApp\src\api_models\UserModel.ts">
+      <CustomToolNamespace>Backend\Models\User\UserModel.cs</CustomToolNamespace>
+    </None>
     <None Update="ClientApp\src\api_models\Users.ts">
       <CustomToolNamespace>Backend\Models\User\Users.cs</CustomToolNamespace>
     </None>
@@ -168,6 +172,9 @@
     </None>
     <None Update="ClientApp\src\api_services\ScheduleStatus.service.ts">
       <CustomToolNamespace>Backend\Controllers\ScheduleStatus\ScheduleStatusController.cs</CustomToolNamespace>
+    </None>
+    <None Update="ClientApp\src\api_services\Tasks.service.ts">
+      <CustomToolNamespace>Backend\Controllers\Tasks\TasksController.cs</CustomToolNamespace>
     </None>
     <None Update="ClientApp\src\api_services\User.service.ts">
       <CustomToolNamespace>Backend\Controllers\User\UserController.cs</CustomToolNamespace>
