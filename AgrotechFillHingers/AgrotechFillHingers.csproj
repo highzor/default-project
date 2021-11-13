@@ -49,7 +49,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\api_models\ScheduleModel.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_models\ScheduleStatusModel.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_services\Authorization.service.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_services\Schedule.service.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\api_services\ScheduleStatus.service.ts" />
     <TypeScriptCompile Remove="ClientApp\src\api_services\User.service.ts" />
   </ItemGroup>
 
@@ -66,8 +70,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="ClientApp\src\api_models\ScheduleModel.ts">
+      <CustomToolNamespace>Backend\Models\Schedule\ScheduleModel.cs</CustomToolNamespace>
+    </None>
+    <None Update="ClientApp\src\api_models\ScheduleStatusModel.ts">
+      <CustomToolNamespace>Backend\Models\ScheduleStatus\ScheduleStatusModel.cs</CustomToolNamespace>
+    </None>
     <None Update="ClientApp\src\api_services\Authorization.service.ts">
       <CustomToolNamespace>Backend\Controllers\Authorization\AuthorizationController.cs</CustomToolNamespace>
+    </None>
+    <None Update="ClientApp\src\api_services\Schedule.service.ts">
+      <CustomToolNamespace>Backend\Controllers\Schedule\ScheduleController.cs</CustomToolNamespace>
+    </None>
+    <None Update="ClientApp\src\api_services\ScheduleStatus.service.ts">
+      <CustomToolNamespace>Backend\Controllers\ScheduleStatus\ScheduleStatusController.cs</CustomToolNamespace>
     </None>
     <None Update="ClientApp\src\api_services\User.service.ts">
       <CustomToolNamespace>Backend\Controllers\User\UserController.cs</CustomToolNamespace>

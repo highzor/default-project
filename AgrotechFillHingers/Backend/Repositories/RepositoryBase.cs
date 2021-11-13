@@ -18,47 +18,25 @@ namespace AgrotechFillHingers.Backend.Repositories
             Transaction = transaction;
         }
 
-        public List<T> GetList ()
+        public List<T> GetList()
         {
-            ModelHelper<T> helper = new ModelHelper<T>(Connection.GetList<T>().AsList());
+            TableAttribute attribute = (TableAttribute)Attribute.GetCustomAttribute(typeof(T), typeof(TableAttribute));
+            ModelHelper<T> helper = new ModelHelper<T>(Connection.Query<T>($"SELECT * FROM {attribute.Name}", Transaction).AsList());
             return helper.ListParseAttribyteFromDb();
         }
 
-        public List<T> GetList(string conditions, object parameters = null)
+        public List<T> GetList (string conditions, object parameters = null)
         {
-            ModelHelper<T> helper = new ModelHelper<T>(Connection.GetList<T>(conditions, parameters, Transaction, null).AsList());
+            TableAttribute attribute = (TableAttribute)Attribute.GetCustomAttribute(typeof(T), typeof(TableAttribute));
+            ModelHelper<T> helper = new ModelHelper<T>(Connection.Query<T>($"SELECT * FROM {attribute.Name} {conditions}", parameters, Transaction).AsList());
             return helper.ListParseAttribyteFromDb();
         }
 
-        public T GetByID(int? id)
+        public T GetFirst(string conditions, object parameters = null)
         {
-            if (id > 0)
-            {
-                ModelHelper<T> helper = new ModelHelper<T>(Connection.GetList<T>(new { ID = id}, Transaction).FirstOrDefault());
-                return helper.SingleParseAttribyteFromDb();
-            }
-            else
-            {
-                return (T)Activator.CreateInstance(typeof(T));
-            }
-        }
-
-        public int? Insert(T entity)
-        {
-            ModelHelper<T> helper = new ModelHelper<T>(entity);
-            return Connection.Insert(helper.SingleParseAttribyteToDb(), Transaction);
-        }
-
-        public int? Update(T entity)
-        {
-            ModelHelper<T> helper = new ModelHelper<T>(entity);
-            return Connection.Update(helper.SingleParseAttribyteToDb(), Transaction);
-        }
-
-        public int? Delete(T entity)
-        {
-            ModelHelper<T> helper = new ModelHelper<T>(entity);
-            return Connection.Delete(helper.SingleParseAttribyteToDb(), Transaction);
+            TableAttribute attribute = (TableAttribute)Attribute.GetCustomAttribute(typeof(T), typeof(TableAttribute));
+            ModelHelper<T> helper = new ModelHelper<T>(Connection.Query<T>($"SELECT * FROM {attribute.Name} {conditions}", parameters, Transaction).AsList());
+            return helper.ListParseAttribyteFromDb().FirstOrDefault();
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using AgrotechFillHingers.Backend.Interfaces;
+using AgrotechFillHingers.Backend.Models.Schedule;
+using AgrotechFillHingers.Backend.Models.ScheduleStatus;
 using AgrotechFillHingers.Backend.Models.User;
 using AgrotechFillHingers.Backend.Repositories;
 using Npgsql;
@@ -18,9 +20,13 @@ namespace AgrotechFillHingers.Backend.Helpers
 
         #region Tables 
         private RepositoryBase<UserModel> _userRepository;
+        private RepositoryBase<ScheduleModel> _scheduleRepository;
+        private RepositoryBase<ScheduleStatusModel> _scheduleStatusRepository;
 
 
         public RepositoryBase<UserModel> UserRepository { get { return _userRepository ??= new RepositoryBase<UserModel>(_transaction);  } }
+        public RepositoryBase<ScheduleModel> ScheduleRepository { get { return _scheduleRepository ??= new RepositoryBase<ScheduleModel>(_transaction); } }
+        public RepositoryBase<ScheduleStatusModel> ScheduleStatusRepository { get { return _scheduleStatusRepository ??= new RepositoryBase<ScheduleStatusModel>(_transaction); } }
         #endregion
 
         #region Views
@@ -36,6 +42,8 @@ namespace AgrotechFillHingers.Backend.Helpers
         private void resetRepositories ()
         {
             _userRepository = null;
+            _scheduleRepository = null;
+            _scheduleStatusRepository = null;
         }
 
         public void Commit()

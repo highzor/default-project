@@ -1,7 +1,7 @@
 ﻿using AgrotechFillHingers.Backend.Helpers;
-using AgrotechFillHingers.Backend.Models.User;
+using AgrotechFillHingers.Backend.Models.Schedule;
 using AgrotechFillHingers.Backend.Views;
-using AgrotechFillHingers.Backend.Views.User;
+using AgrotechFillHingers.Backend.Views.Schedule;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
@@ -10,32 +10,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AgrotechFillHingers.Backend.Controllers.User
+namespace AgrotechFillHingers.Backend.Controllers.Schedule
 {
+
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController: BaseController
+    public class ScheduleController : BaseController
     {
-        private UserView _domainView;
+        private ScheduleView _domainView;
 
-        public UserController(IConfiguration configuration) : base(configuration)
+        public ScheduleController(IConfiguration configuration) : base(configuration)
         {
-            _domainView = new UserView(configuration);
+            _domainView = new ScheduleView(configuration);
         }
-
 
         [Route("List")]
         [HttpGet]
-        [ReturnType(typeof(UserModel))]
+        [ReturnType(typeof(ScheduleModel))]
         public IActionResult List()
         {
             try
             {
                 return Content(JsonConvert.SerializeObject(_domainView.List()));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                string errorText = "Не удалось получить список пользователей.";
+                string errorText = "Не удалось получить расписание.";
                 if (ex is InnerViewException)
                 {
                     errorText += Environment.NewLine + ex.Message;
@@ -47,7 +47,7 @@ namespace AgrotechFillHingers.Backend.Controllers.User
 
         [Route("Info")]
         [HttpGet]
-        [ReturnType(typeof(UserModel))]
+        [ReturnType(typeof(ScheduleModel))]
         public IActionResult Info(int id)
         {
             try
@@ -56,7 +56,7 @@ namespace AgrotechFillHingers.Backend.Controllers.User
             }
             catch (Exception ex)
             {
-                string errorText = "Не удалось получить информацию о пользователе.";
+                string errorText = "Не удалось получить информацию о расписании.";
                 if (ex is InnerViewException)
                 {
                     errorText += Environment.NewLine + ex.Message;

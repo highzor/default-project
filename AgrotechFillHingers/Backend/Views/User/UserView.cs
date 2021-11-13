@@ -1,5 +1,6 @@
 ﻿using AgrotechFillHingers.Backend.Helpers;
 using AgrotechFillHingers.Backend.Models.User;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace AgrotechFillHingers.Backend.Views.User
 {
     public class UserView : ViewBase
     {
-        public UserView()
+        public UserView(IConfiguration configuration) : base(configuration)
         {
 
         }
@@ -28,7 +29,7 @@ namespace AgrotechFillHingers.Backend.Views.User
         {
             using (var uow = new UnitOfWork(GetConnectionString()))
             {
-                UserModel userModel = uow.UserRepository.GetByID(id);
+                UserModel userModel = uow.UserRepository.GetFirst("where id = @id", new { id });
 
                 return userModel;
             }

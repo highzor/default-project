@@ -2,17 +2,19 @@
 
 //Global
 @main-color-white: #ffffff;
+@inner-content-color-grey: #F0F2F5;
 
 @layout-header-background: @main-color-white;
 @layout-body-background: @main-color-white;
 
-.ant-layout{
-    height: 100vh;
+
+.ant-layout {
+    height: 90vh;
 
     &-header {
         height: 64px;
         line-height: 50px !important;
-        padding:0px !important;
+        padding: 0px !important;
     }
 
     &-content {
@@ -23,4 +25,17 @@
 .main-menu{
     width: 100%;
     align-items: center;
+}
+
+.inner-content {
+    margin: 24px;
+    height: 100% !important;
+}
+
+.ant-tabs-content-holder {
+    background-color: @inner-content-color-grey;
+}
+
+.ant-tabs-left > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane {
+    padding-left: 0px !important;
 }
